@@ -1,5 +1,10 @@
 package edu.poly.stockmanagement.action;
 
-public class LoginAction {
+import com.opensymphony.xwork2.ActionSupport;
+
+public class LoginAction extends ActionSupport {
+
+	private static final long serialVersionUID = 1L;
+	
 
 }
