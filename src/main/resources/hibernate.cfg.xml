@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration SYSTEM "/WEB-INF/dtds/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC 
+"-//Hibernate Configuration 3.0//EN" 
+"http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
 <hibernate-configuration>
 	<session-factory>
 		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect
