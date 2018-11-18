@@ -9,7 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import edu.poly.stockmanagement.dao.BasicCrud;
+import edu.poly.stockmanagement.dao.BasicCrudDao;
 import edu.poly.stockmanagement.util.HibernateUtil;
 
 /**
@@ -20,11 +20,11 @@ import edu.poly.stockmanagement.util.HibernateUtil;
  * @param <T> Kiểu dữ liệu
  * @param <ID> Kiểu dữ liệu ID của kiểu dữ liệu <code>&ltT&gt</code>
  */
-public class BasicCrudImpl<T, ID extends Serializable> implements BasicCrud<T, ID> {
+public class BasicCrudImplDao<T, ID extends Serializable> implements BasicCrudDao<T, ID> {
 
 	protected SessionFactory sessionFactory;
 
-	public BasicCrudImpl() {
+	public BasicCrudImplDao() {
 		sessionFactory = HibernateUtil.getSessionfactory();
 	}
 

@@ -11,7 +11,7 @@ import java.util.List;
  * @param <T> Kiểu dữ liệu
  * @param <ID> ID của kiểu dữ liệu <code>&ltT&gt</code>
  */
-public interface BasicCrud<T, ID extends Serializable> {
+public interface BasicCrudDao<T, ID extends Serializable> {
 
 	/**
 	 * Lưu 1 đối tượng <code>object</code> có kiểu <code>&ltT&gt</code>
