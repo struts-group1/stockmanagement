@@ -14,11 +14,11 @@ import edu.poly.stockmanagement.util.HibernateUtil;
 
 /**
  * Lớp thực thi giao diện BasicCrud.
- * 
- * @author Manh Nguyen
  *
  * @param <T> Kiểu dữ liệu
  * @param <ID> Kiểu dữ liệu ID của kiểu dữ liệu <code>&ltT&gt</code>
+ * 
+ * @author Manh Nguyen
  */
 public class BasicCrudImplDao<T, ID extends Serializable> implements BasicCrudDao<T, ID> {
 

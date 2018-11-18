@@ -1,11 +1,12 @@
 package edu.poly.stockmanagement.configuration;
 
 import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
+
+import org.apache.struts2.dispatcher.listener.StrutsListener;
 
 import edu.poly.stockmanagement.util.HibernateUtil;
 
-public class ApplicationContextInitializer implements ServletContextListener {
+public class ApplicationContextInitializer extends StrutsListener {
 
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {

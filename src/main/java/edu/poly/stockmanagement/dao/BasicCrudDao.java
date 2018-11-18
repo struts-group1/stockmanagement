@@ -18,11 +18,17 @@ public interface BasicCrudDao<T, ID extends Serializable> {
 	 * 
 	 * @param object tham số truyền vào là 1 đối tượng kiểu <code>&ltT&gt</code>
 	 * @return Trả về một đối tượng có kiểu <code>&ltT&gt</code>, bao gồm cả ID
-	 * @throws Exception 
+	 * @throws Exception
 	 * @author Manh Nguyen
 	 */
 	T save(T object);
 
+	/**
+	 * Cập nhật 1 đối tượng <code>object</code> có kiểu là <code>&ltT&gt</code>
+	 * 
+	 * @param object
+	 * @return
+	 */
 	T update(T object);
 
 	T saveOrUpdate(T object);
