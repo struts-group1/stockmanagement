@@ -16,7 +16,7 @@ public class LoginAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
 
-	@Action("/login")
+	@Action("/sign-in")
 	public String goLoginPage() {
 		return "loginPage";
 	}

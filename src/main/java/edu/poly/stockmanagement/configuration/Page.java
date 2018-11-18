@@ -12,4 +12,7 @@ public interface Page {
 
 	String LOGIN_PAGE = "/WEB-INF/pages/login.jsp";
 
+	// Mậu - Producer
+	String PRODUCER_INDEX_PAGE = "/WEB-INF/pages/producer/producer_index.jsp";
+	String PRODUCER_FORM_PAGE = "/WEB-INF/pages/producer/producer_form.jsp";
 }
