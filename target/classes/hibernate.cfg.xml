@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC  "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC  
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+"http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 	<session-factory>
 		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
@@ -9,8 +11,15 @@
 		<property name="connection.password">123</property>
 		<property name="pool_size">1</property>
 		<property name="show_sql">true</property>
-		<property name="hbm2ddl.auto">create</property>
-		
+		<property name="hbm2ddl.auto">none</property>
+
+		<mapping class="edu.poly.stockmanagement.model.Account" />
+		<mapping class="edu.poly.stockmanagement.model.Category" />
+		<mapping class="edu.poly.stockmanagement.model.Goods" />
+		<mapping class="edu.poly.stockmanagement.model.Inventory" />
+		<mapping class="edu.poly.stockmanagement.model.Producer" />
+		<mapping class="edu.poly.stockmanagement.model.Reference" />
 		<mapping class="edu.poly.stockmanagement.model.Stock" />
+		<mapping class="edu.poly.stockmanagement.model.Supplier" />
 	</session-factory>
 </hibernate-configuration>
