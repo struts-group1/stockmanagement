@@ -1,6 +1,5 @@
 package edu.poly.stockmanagement.dao.impl;
 
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.hibernate.Session;
