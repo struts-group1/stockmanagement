@@ -1,4 +1,4 @@
-package edu.poly.stockmanagement.action;
+  package edu.poly.stockmanagement.action;
 
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;

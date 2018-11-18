@@ -11,17 +11,17 @@ import com.opensymphony.xwork2.ActionSupport;
 import edu.poly.stockmanagement.configuration.Page;
 
 @Results(value = { @Result(name = "loginPage", location = Page.LOGIN_PAGE),
-		@Result(name = "login", location = Page.INDEX_PAGE, type = "redirect") })
+		@Result(name = "login", location = "loginPage", type = "redirect") })
 public class LoginAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
 
-	@Action("/login")
+	@Action("/sign-in")
 	public String goLoginPage() {
 		return "loginPage";
 	}
 
-	@Action(value = "/login", params = { "username", "password" })
+	@Action(value = "/login")
 	public String login() {
 		ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
 		return "login";

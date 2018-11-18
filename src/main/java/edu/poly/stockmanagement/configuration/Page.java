@@ -11,5 +11,7 @@ public interface Page {
 	String INDEX_PAGE = "/WEB-INF/pages/index.jsp";
 
 	String LOGIN_PAGE = "/WEB-INF/pages/login.jsp";
+	
+	
 
 }
