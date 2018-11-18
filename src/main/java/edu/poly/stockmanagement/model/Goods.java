@@ -5,66 +5,61 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
 
-
 /**
  * The persistent class for the goods database table.
  * 
  */
 @Entity
-@Table(name="goods")
+@Table(name = "goods")
 public class Goods implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="GOODS_ID", unique=true, nullable=false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "GOODS_ID", unique = true, nullable = false)
 	private Integer id;
 
-	@Column(name="GOODS_CODE", nullable=false, length=8)
+	@Column(name = "GOODS_CODE", nullable = false, length = 8)
 	private String code;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name="GOODS_EXPIRATION", nullable=false)
+	@Column(name = "GOODS_EXPIRATION", nullable = false)
 	private Date expiration;
 
-	@Column(name="GOODS_EXPORT_PRICE", nullable=false)
+	@Column(name = "GOODS_EXPORT_PRICE", nullable = false)
 	private Integer exportPrice;
 
-	@Column(name="GOODS_FEATURE", nullable=false, length=45)
+	@Column(name = "GOODS_FEATURE", nullable = false, length = 45)
 	private String feature;
 
-	@Column(name="GOODS_IMPORT_PRICE", nullable=false)
+	@Column(name = "GOODS_IMPORT_PRICE", nullable = false)
 	private Integer importPrice;
 
-	@Column(name="GOODS_LOTNUMBER", length=16)
+	@Column(name = "GOODS_LOTNUMBER", length = 16)
 	private String lotNumber;
 
-	@Column(name="GOODS_NAME", nullable=false, length=64)
+	@Column(name = "GOODS_NAME", nullable = false, length = 64)
 	private String name;
 
-	@Column(name="GOODS_NEW_BRAND", nullable=false)
-	private int newBrand;
+	@Column(name = "GOODS_NEW_BRAND", nullable = false)
+	private Boolean newBrand;
 
-	@Column(name="GOODS_UNIT", nullable=false, length=16)
+	@Column(name = "GOODS_UNIT", nullable = false, length = 16)
 	private String unit;
 
-	//bi-directional many-to-one association to Category
 	@ManyToOne
-	@JoinColumn(name="CATEGORY_ID", nullable=false)
+	@JoinColumn(name = "CATEGORY_ID", nullable = false)
 	private Category category;
 
-	//bi-directional many-to-one association to Producer
 	@ManyToOne
-	@JoinColumn(name="PRODUCER_ID", nullable=false)
+	@JoinColumn(name = "PRODUCER_ID", nullable = false)
 	private Producer producer;
 
-	//bi-directional many-to-one association to Supplier
 	@ManyToOne
-	@JoinColumn(name="SUPPLIER_ID", nullable=false)
+	@JoinColumn(name = "SUPPLIER_ID", nullable = false)
 	private Supplier supplier;
 
-	//bi-directional many-to-one association to Inventory
-	@OneToMany(mappedBy="goods")
+	@OneToMany(mappedBy = "goods")
 	private Set<Inventory> inventories;
 
 	public Goods() {
@@ -134,11 +129,11 @@ public class Goods implements Serializable {
 		this.name = name;
 	}
 
-	public int getNewBrand() {
+	public Boolean getNewBrand() {
 		return this.newBrand;
 	}
 
-	public void setNewBrand(int newBrand) {
+	public void setNewBrand(Boolean newBrand) {
 		this.newBrand = newBrand;
 	}
 
@@ -194,6 +189,14 @@ public class Goods implements Serializable {
 		inventory.setGood(null);
 
 		return inventory;
+	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"Goods [id=%s, code=%s, expiration=%s, exportPrice=%s, feature=%s, importPrice=%s, lotNumber=%s, name=%s, newBrand=%s, unit=%s, category=%s, producer=%s, supplier=%s]",
+				id, code, expiration, exportPrice, feature, importPrice, lotNumber, name, newBrand, unit, category,
+				producer, supplier);
 	}
 
 }
